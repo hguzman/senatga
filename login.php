@@ -8,16 +8,23 @@
 
 	$sql = "select * from usuarios where usuario='$usuario' and contrasena='$contrasena'";
 
-	$result = mysql_query($sql);
+	$result = mysql_query($sql); // Aqui hace la consulta y el resultado lo coloca en la variable
 
 	$contador=  mysql_num_rows($result);
 
 	if ($contador<1){
 		header('Location: index.html'); // Regresa al index
-	}
+	}else{
 		session_start(); //Inicia Manipulación de Variables de Session
 	    $_SESSION["nomusuario"]=$usuario; //Coloca variable de session
 
+		$row = mysql_fetch_row($result); // el resultado lo coloco en fila
+
+		$perfil=$row[2];
+
+//		echo "ESTE ES EL PERFIL".$perfil;
+
+	}
 ?>
 
 <!doctype html>
@@ -56,19 +63,20 @@
 				<ul class="side-nav">
 				  <li><a href="administracion.php">Administración</a></li>
 				<?php
-					if ($usuario=="hguzman"){
+					if ($perfil==1){
 				?>
-				  	<li><a href="#">PQR</a></li>				  
+					<li><a href="#">PQR</a></li>				  
+					<li><a href="#">Vigilancia</a></li>
+					<li><a href="#">Calificación</a></li>
+					<li><a href="#">Metas</a></li>
+					<li><a href="#">Formas de Pago</a></li>
+					<li><a href="#">Ayuda</a></li>
+					<li><a href="#">Lector de Codigo</a></li>
+
 				 <?php
 					}
 				 ?> 
 
-				  <li><a href="#">Vigilancia</a></li>
-				  <li><a href="#">Calificación</a></li>
-				  <li><a href="#">Metas</a></li>
-				  <li><a href="#">Formas de Pago</a></li>
-				  <li><a href="#">Ayuda</a></li>
-				  <li><a href="#">Lector de Codigo</a></li>
 				</ul>				
 			</div>
 			<div class="large-10 columns">

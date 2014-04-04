@@ -1,25 +1,11 @@
 <?php
-
-	$usuario=$_POST['usu'];
-	$contrasena=$_POST['con'];
-
-	$db = mysql_connect("127.0.0.1", "root","usrio01"); // Conecta la base de datos
-	mysql_select_db("senatga",$db);// Seleccion la base de datos correcta
-
-	$sql = "select * from usuarios where usuario='$usuario' and contrasena='$contrasena'";
-
-	$result = mysql_query($sql);
-
-	$contador=  mysql_num_rows($result);
-
-	if ($contador<1){
+	session_start(); //Inicia Manipulación de Variables de Session
+    if (isset($_SESSION['nomusuario'])){    	
+	    $usuario=$_SESSION["nomusuario"];
+    }else {
 		header('Location: index.html');
-	}
-		session_start(); //Inicia Manipulación de Variables de Session
-	    $_SESSION["nomusuario"]=$usuario;
-
+    }
 ?>
-
 <!doctype html>
 <html lang="es">
 	<head>
@@ -54,8 +40,8 @@
 		<div class="row">
 			<div class="large-2 columns panel">
 				<ul class="side-nav">
-				  <li><a href="administracion.php">Administración</a></li>
-				  <li><a href="#">Modulo 2</a></li>
+				  <li><a href="usuario.php">Usuario</a></li>
+				  <li><a href="#">Perfiel</a></li>
 				  <li><a href="#">Modulo 3</a></li>
 				  <li><a href="#">Modulo 4</a></li>
 				</ul>				

@@ -43,9 +43,12 @@
 				</ul>				
 			</div>
 			<div class="large-10 columns">
-				<input type="text" name="usu" value="" placeholder="Usuario">
-				<input type="password" name="con" value="" placeholder="Contraseña">
-				<a href="#" class="button">Guardar</a>
+				<form action="guardararchivo.php" method="post">
+					<input type="text" name="usu" value="" placeholder="Usuario">
+					<input type="password" name="con" value="" placeholder="Contraseña">
+					<input type="submit" name="" value="Guardar" class="button">
+					
+				</form>
 			</div>
 		</div>
 		<footer class="row">

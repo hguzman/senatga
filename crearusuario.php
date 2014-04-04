@@ -1,6 +1,6 @@
 <?php
 	session_start(); //Inicia Manipulación de Variables de Session
-    if (isset($_SESSION['nomusuario'])){    	
+    if (isset($_SESSION['nomusuario'])){   // Existe la variable 	
 	    $usuario=$_SESSION["nomusuario"];
     }else {
 		header('Location: index.html');
@@ -40,15 +40,12 @@
 		<div class="row">
 			<div class="large-2 columns panel">
 				<ul class="side-nav">
-				  <li><a href="crearusuario.php">Crear</a></li>
-				  <li><a href="#">Modificar</a></li>
-				  <li><a href="#">Listar</a></li>
-				  <li><a href="#">Eliminar</a></li>
 				</ul>				
 			</div>
 			<div class="large-10 columns">
-				Que hace la opcion usuario
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, rerum, accusantium, ullam optio a tempore saepe laborum facere odit omnis iusto aspernatur id reprehenderit dolore illo delectus nemo distinctio fuga!
+				<input type="text" name="usu" value="" placeholder="Usuario">
+				<input type="password" name="con" value="" placeholder="Contraseña">
+				<a href="#" class="button">Guardar</a>
 			</div>
 		</div>
 		<footer class="row">

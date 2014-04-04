@@ -1,6 +1,6 @@
 <?php
 	session_start(); //Inicia Manipulación de Variables de Session
-    if (isset($_SESSION['nomusuario'])){    	
+    if (isset($_SESSION['nomusuario'])){   // Existe la variable 	
 	    $usuario=$_SESSION["nomusuario"];
     }else {
 		header('Location: index.html');
@@ -41,12 +41,13 @@
 			<div class="large-2 columns panel">
 				<ul class="side-nav">
 				  <li><a href="usuario.php">Usuario</a></li>
-				  <li><a href="#">Perfiel</a></li>
-				  <li><a href="#">Modulo 3</a></li>
-				  <li><a href="#">Modulo 4</a></li>
+				  <li><a href="#">Personal</a></li>
+				  <li><a href="#">Roles</a></li>
+				  <li><a href="#">Habilitar</a></li>
 				</ul>				
 			</div>
 			<div class="large-10 columns">
+				Que opciones existen dentro de administración
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, unde, eligendi odit harum mollitia quibusdam aut asperiores dolorem error sed obcaecati atque laudantium vero provident vitae quam repudiandae voluptatem optio.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, eveniet, iusto, doloribus molestiae vero illum magni unde enim ut blanditiis similique voluptatum ducimus voluptates totam officiis quasi quos esse ab!
 			</div>

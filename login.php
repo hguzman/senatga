@@ -13,10 +13,10 @@
 	$contador=  mysql_num_rows($result);
 
 	if ($contador<1){
-		header('Location: index.html');
+		header('Location: index.html'); // Regresa al index
 	}
 		session_start(); //Inicia Manipulación de Variables de Session
-	    $_SESSION["nomusuario"]=$usuario;
+	    $_SESSION["nomusuario"]=$usuario; //Coloca variable de session
 
 ?>
 
@@ -55,12 +55,17 @@
 			<div class="large-2 columns panel">
 				<ul class="side-nav">
 				  <li><a href="administracion.php">Administración</a></li>
-				  <li><a href="#">Modulo 2</a></li>
-				  <li><a href="#">Modulo 3</a></li>
-				  <li><a href="#">Modulo 4</a></li>
+				  <li><a href="#">PQR</a></li>
+				  <li><a href="#">Vigilancia</a></li>
+				  <li><a href="#">Calificación</a></li>
+				  <li><a href="#">Metas</a></li>
+				  <li><a href="#">Formas de Pago</a></li>
+				  <li><a href="#">Ayuda</a></li>
+				  <li><a href="#">Lector de Codigo</a></li>
 				</ul>				
 			</div>
 			<div class="large-10 columns">
+				Descripción de las opciones del proyecto
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, unde, eligendi odit harum mollitia quibusdam aut asperiores dolorem error sed obcaecati atque laudantium vero provident vitae quam repudiandae voluptatem optio.
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, eveniet, iusto, doloribus molestiae vero illum magni unde enim ut blanditiis similique voluptatum ducimus voluptates totam officiis quasi quos esse ab!
 			</div>
